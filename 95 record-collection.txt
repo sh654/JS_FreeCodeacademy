@@ -1,0 +1,60 @@
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  // Check if the album with the given id exists
+  if (!records[id]) {
+    // If not, create an empty object for the album
+    records[id] = {};
+  }
+
+  // Check if prop is 'tracks' and value is not an empty string
+  if (prop === 'tracks' && value !== '') {
+    // Check if the album has a 'tracks' property
+    if (!records[id].tracks) {
+      // If not, create an empty array for the 'tracks' property
+      records[id].tracks = [];
+    }
+
+    // Add value to the end of the album's tracks array
+    records[id].tracks.push(value);
+  }
+  // Check if value is an empty string
+  else if (value === '') {
+    // If so, delete the given prop property from the album
+    delete records[id][prop];
+  }
+  // Otherwise, update or set the album's prop to value
+  else {
+    records[id][prop] = value;
+  }
+
+  // Return the entire record collection object
+  return records;
+}
+
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// This updateRecords function takes an object records representing the musical album collection, an id representing the unique id number of an album, a prop representing the property to be updated or set, and a value representing the value of the property. It follows the rules provided to modify the object records and returns the entire record collection object.
+
+// I hope this helps to give you an idea of how you can implement the updateRecords function! If you have any more questions, don't hesitate to ask.

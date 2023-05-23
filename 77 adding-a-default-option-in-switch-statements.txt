@@ -1,0 +1,35 @@
+function switchOfStuff(val) {
+  let answer = "";
+  // Only change code below this line
+
+  switch(val) {
+    case "a" :
+    answer = "apple";
+    break;
+    case "b" :
+    answer = "bird";
+    break;
+    case "c" :
+    answer = "cat";
+    break;
+    default:
+    answer = "stuff";
+    break;
+  }
+
+  // Only change code above this line
+  return answer;
+}
+
+switchOfStuff("a");
+
+/*
+switchOfStuff("a") should return the string apple
+Passed:switchOfStuff("b") should return the string bird
+Passed:switchOfStuff("c") should return the string cat
+Passed:switchOfStuff("d") should return the string stuff
+Passed:switchOfStuff(4) should return the string stuff
+Passed:You should not use any if or else statements
+Passed:You should use a default statement
+Passed:You should have at least 3 break statements
+*/
